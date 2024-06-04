@@ -11,11 +11,11 @@ ninja
 cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DENABLE_OPENMP=ON  ..
 ninja
 
-./openmp-pixelmatch-non-openmp-release ../assets/image1.jpg ../assets/image2.jpg
+./benchmark1-non-openmp-release ../assets/image1.jpg ../assets/image2.jpg
 # Differences: 7573862
 # Time taken for pixelmatch: 0.276000 seconds
 
-./openmp-pixelmatch-openmp-release     ../assets/image1.jpg ../assets/image2.jpg
+./benchmark2-openmp-release     ../assets/image1.jpg ../assets/image2.jpg
 # Differences: 7573862
 # Time taken for pixelmatch: 0.058000 seconds
 # 4.76 speedup!
