@@ -19,6 +19,13 @@ ninja
 # Differences: 7573862
 # Time taken for pixelmatch: 0.058000 seconds
 # 4.76 speedup!
+
+./benchmark2-non-openmp-release
+# Time taken for pixelmatch: 35.872000 seconds
+
+./benchmark2-openmp-release
+# Time taken for pixelmatch: 6.572000 seconds
+# 5.46 speedup!
 ```
 
 
