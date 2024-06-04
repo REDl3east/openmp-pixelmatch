@@ -18,7 +18,7 @@ else()
 endif()
 
 set(MAIN_SRC
-  ${CMAKE_CURRENT_SOURCE_DIR}/benchmark/benchmark.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/benchmark/benchmark1.cpp
 )
 
 add_executable(openmp-pixelmatch ${MAIN_SRC})
