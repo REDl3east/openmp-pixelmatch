@@ -26,9 +26,12 @@ int main(int argc, char** argv) {
   int next_frame_height;
   int next_frame_channel;
   uint64_t diff = 0;
-  clock_t start;
-  clock_t end;
-  double total_time_spent = 0;
+  clock_t pixelmatch_start;
+  clock_t pixelmatch_end;
+  double pixelmatch_time_spent = 0;
+
+  clock_t program_start = clock();;
+  clock_t program_end;
 
   snprintf(current_frame_path, 255, "../assets/frames/%08d.png", 1);
   snprintf(next_frame_path, 255, "../assets/frames/%08d.png", 2);
@@ -57,12 +60,12 @@ int main(int argc, char** argv) {
       DEFER_END(rc, 1);
     }
 
-    start = clock();
+    pixelmatch_start = clock();
 
     diff = pixelmatch(current_frame_data, next_frame_data, current_frame_width, current_frame_height, 0.1, true);
 
-    end = clock();
-    total_time_spent += (double)(end - start) / CLOCKS_PER_SEC;
+    pixelmatch_end = clock();
+    pixelmatch_time_spent += (double)(pixelmatch_end - pixelmatch_start) / CLOCKS_PER_SEC;
 
     printf("%s - %s = %lu\n", current_frame_path, next_frame_path, diff);
 
@@ -85,7 +88,9 @@ int main(int argc, char** argv) {
 end:
 
   if (rc == 0) {
-    printf("Time taken for pixelmatch: %f seconds\n", total_time_spent);
+    program_end = clock();
+    printf("Time taken for pixelmatch: %f seconds\n", pixelmatch_time_spent);
+    printf("Total time: %f seconds\n", (double)(program_end - program_start) / CLOCKS_PER_SEC);
   }
 
   stbi_image_free(current_frame_data);

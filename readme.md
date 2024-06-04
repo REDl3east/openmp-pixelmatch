@@ -21,11 +21,12 @@ ninja
 # 4.76 speedup!
 
 ./benchmark2-non-openmp-release
-# Time taken for pixelmatch: 35.872000 seconds
+# Time taken for pixelmatch: 33.025000 seconds
+# Total time: 62.843000 seconds
 
 ./benchmark2-openmp-release
-# Time taken for pixelmatch: 6.572000 seconds
-# 5.46 speedup!
+# Time taken for pixelmatch: 6.692000 seconds
+# Total time: 51.080000 seconds
 ```
 
 
